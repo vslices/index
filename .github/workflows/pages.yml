@@ -1,0 +1,68 @@
+name: Publish VSlices Index
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout index
+        uses: actions/checkout@v4
+      - name: Checkout reviewed Enactment revision
+        uses: actions/checkout@v4
+        with:
+          repository: vslices/enactment-playground
+          ref: 54be79f140135fbb04d03fb1cba24b7b0faa2a14
+          path: dependencies/enactment-playground
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and test Enactment
+        working-directory: dependencies/enactment-playground
+        run: |
+          npm install --no-audit --no-fund
+          npm run check
+      - name: Assemble static site
+        run: |
+          mkdir -p public/playground/enactment
+          cp index.html CNAME public/
+          cp -R dependencies/enactment-playground/site/. public/playground/enactment/
+          test -s public/index.html
+          test -s public/playground/enactment/index.html
+          test -s public/playground/enactment/assets/main.js
+          test -s public/playground/enactment/styles.css
+          ! test -f public/playground/enactment/CNAME
+      - name: Upload preview artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vslices-index-preview
+          path: public/
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4
