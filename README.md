@@ -12,7 +12,7 @@ This repository owns the **public static publication surface** for VSlices, targ
 
 [Enactment Playground](https://github.com/vslices/enactment-playground) remains a standalone repository. Index checks out a **specific source revision**, builds and tests it, and copies its `site/` output into `public/playground/enactment/`. Updates to the upstream repository do not automatically replace the published version: revise the pin in a reviewed PR.
 
-**Proposed source pin:** `0cb1aadfab235b0b292c8e76f1aa6427f4034f1d`, from [Enactment PR #3](https://github.com/vslices/enactment-playground/pull/3). This introduces the 2026-11-01 Composition-authorized QA-internal promotion simulator and preserves legacy v1 share URLs at `legacy.html`. Merge Enactment PR #3 and verify source/Index CI before promoting this pin.
+**Current source pin:** `1642e103b2f6db65c7c091dd410fb6d119556ab5`, merged from [Enactment PR #4](https://github.com/vslices/enactment-playground/pull/4). This revision keeps the Composition promotion simulator and v1 legacy compatibility, and introduces the sticky, scenario-oriented sidebar with the canonical protocol link.
 
 ## Publication
 
