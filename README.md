@@ -12,7 +12,7 @@ This repository owns the **public static publication surface** for VSlices, targ
 
 [Enactment Playground](https://github.com/vslices/enactment-playground) remains a standalone repository. Index checks out a **specific source revision**, builds and tests it, and copies its `site/` output into `public/playground/enactment/`. Updates to the upstream repository do not automatically replace the published version: revise the pin in a reviewed PR.
 
-**Initial source pin:** `54be79f140135fbb04d03fb1cba24b7b0faa2a14`, from [Enactment PR #1](https://github.com/vslices/enactment-playground/pull/1). This is an integration candidate, not a claim the upstream PR was merged; verify and approve that source revision before releasing Index.
+**Initial source pin:** `37f8dd084440c8f665bd85f268aebb998e3f3d1a`, from [Enactment PR #2](https://github.com/vslices/enactment-playground/pull/1). This revision is proposed by Enactment PR #2 Landing MVP candidate; Index promotes only after the upstream revision is reviewed and its CI succeeds.
 
 ## Publication
 
