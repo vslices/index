@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: vslices/enactment-playground
-          ref: 2bdc24d2e2ff43865f721e4dc62d0bc531b7256c
+          ref: ee404cbaef4631eb2a2b8ac8e07469a73f270370
           path: dependencies/enactment-playground
           persist-credentials: false
       - name: Setup Node
