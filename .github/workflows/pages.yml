@@ -35,8 +35,12 @@ jobs:
         run: |
           mkdir -p public/playground/enactment
           cp index.html CNAME public/
+          mkdir -p public/assets
+          cp assets/vslices.svg public/assets/vslices.svg
           cp -R dependencies/enactment-playground/site/. public/playground/enactment/
           test -s public/index.html
+          test -s public/assets/vslices.svg
+          grep -q '#9C2FA0' public/index.html
           test -s public/playground/enactment/index.html
           test -s public/playground/enactment/assets/main.js
           test -s public/playground/enactment/assets/model.js
