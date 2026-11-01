@@ -12,7 +12,7 @@ This repository owns the **public static publication surface** for VSlices, targ
 
 [Enactment Playground](https://github.com/vslices/enactment-playground) remains a standalone repository. Index checks out a **specific source revision**, builds and tests it, and copies its `site/` output into `public/playground/enactment/`. Updates to the upstream repository do not automatically replace the published version: revise the pin in a reviewed PR.
 
-**Current source pin:** `e5111a7e00883cd648609308b58f3af779ed4f52`, merged from [Enactment PR #8](https://github.com/vslices/enactment-playground/pull/8). Keeps Overview / Raw Config tabs sticky during scrolling while allowing the breadcrumb to scroll normally, removes the redundant browser-only badge and retains existing scenario replay and sharing.
+**Current source pin:** `2bdc24d2e2ff43865f721e4dc62d0bc531b7256c`, merged from [Enactment PR #9](https://github.com/vslices/enactment-playground/pull/9). Moves Owner, Authority, Interactions and Cursor indicators into compact sidebar cards, freeing the top of Overview for the Enactment canvas.
 
 ## Publication
 
