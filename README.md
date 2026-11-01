@@ -12,7 +12,7 @@ This repository owns the **public static publication surface** for VSlices, targ
 
 [Enactment Playground](https://github.com/vslices/enactment-playground) remains a standalone repository. Index checks out a **specific source revision**, builds and tests it, and copies its `site/` output into `public/playground/enactment/`. Updates to the upstream repository do not automatically replace the published version: revise the pin in a reviewed PR.
 
-**Current source pin:** `7193ebc6d26907399bdb3632183601ae3f156f19`, merged from [Enactment PR #6](https://github.com/vslices/enactment-playground/pull/6). Adds configurable, first-visit scenario introduction in a dismissible sidebar dialog and frees the main canvas of introductory text; v1/v2 sharing remains compatible.
+**Current source pin:** `3d21d4cb870e28459278e16d12df23cd962246d4`, merged from [Enactment PR #7](https://github.com/vslices/enactment-playground/pull/7). Fixes scenario introduction modal visibility with deterministic cache-busted browser modules and reduces the main canvas padding while preserving history and URL compatibility.
 
 ## Publication
 
