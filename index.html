@@ -3,29 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121019">
   <meta name="description" content="VSlices: exploraciones públicas y realizaciones examinables.">
   <title>VSlices · Index</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/vslices.svg">
   <style>
-  :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#10151e;color:#f2f6f8}
-  *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 85% 12%,#173d43,transparent 52%),#10151e}
-  main{max-width:940px;margin:0 auto;padding:clamp(26px,6vw,70px) 24px}
-  .eyebrow{color:#68dbc0;font-size:.82rem;letter-spacing:.18em;font-weight:700}h1{font-size:clamp(2.4rem,6vw,4.5rem);letter-spacing:-.06em;margin:.45em 0}
-  p{color:#b6c6d2;line-height:1.65;max-width:680px}.tile{display:block;text-decoration:none;color:inherit;border:1px solid #3a4956;padding:24px;border-radius:14px;background:#192630;max-width:610px;margin-top:42px}
-  .tile:hover,.tile:focus-visible{border-color:#68dbc0;outline:2px solid transparent}.tile h2{margin:0 0 8px}.tile p{margin-bottom:0}
-  footer{color:#8296a4;font-size:.8rem;margin-top:60px}
+    :root {
+      color-scheme: dark;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --bg: #100e15;
+      --surface: #1b1722;
+      --line: #352e3d;
+      --text: #f6f1f8;
+      --muted: #aa9fb1;
+      --purple: #9C2FA0;
+      --purple-bright: #dc83e2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background: radial-gradient(circle at 84% 11%, #39203f 0, transparent 43%), var(--bg);
+    }
+    main { max-width: 940px; margin: 0 auto; padding: clamp(26px, 6vw, 70px) 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; margin-bottom: clamp(44px, 8vw, 92px); }
+    .brand img { display: block; width: 44px; height: 44px; object-fit: contain; }
+    .brand-name { font-weight: 750; font-size: 1.25rem; letter-spacing: -.025em; }
+    .brand-note { color: var(--muted); font-size: .73rem; margin-top: 3px; letter-spacing: .08em; }
+    .eyebrow { color: var(--purple-bright); font-size: .78rem; letter-spacing: .16em; font-weight: 750; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); letter-spacing: -.06em; margin: .4em 0; line-height: 1.1; }
+    p { color: var(--muted); line-height: 1.65; max-width: 680px; }
+    .tile {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: 14px;
+      background: linear-gradient(130deg, #271b2d, var(--surface));
+      max-width: 610px;
+      margin-top: 42px;
+      transition: border-color .15s, transform .15s;
+    }
+    .tile:hover { border-color: var(--purple-bright); transform: translateY(-2px); }
+    .tile:focus-visible { outline: 2px solid var(--purple-bright); outline-offset: 4px; }
+    .tile h2 { margin: 10px 0 8px; font-size: 1.3rem; }
+    .tile p { margin-bottom: 0; }
+    .tile .arrow { color: var(--purple-bright); }
+    footer { color: #95899d; font-size: .78rem; margin-top: 60px; line-height: 1.6; }
+    @media (prefers-reduced-motion: reduce) {
+      .tile { transition: none; }
+      .tile:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
   <main>
-    <div class="eyebrow">VSLICES / INDEX</div>
-    <h1>Explorar. Realizar. Revisar.</h1>
-    <p>Una superficie pública para proyectos, experimentos y realizaciones de VSlices. Cada experiencia conserva su repositorio, evidencia y trayectoria.</p>
+    <header class="brand">
+      <img src="./assets/vslices.svg" alt="" width="44" height="44">
+      <div>
+        <div class="brand-name">VSlices</div>
+        <div class="brand-note">PUBLIC INDEX</div>
+      </div>
+    </header>
+    <section aria-labelledby="intro-title">
+      <div class="eyebrow">VSLICES / INDEX</div>
+      <h1 id="intro-title">Explorar. Realizar. Revisar.</h1>
+      <p>Una superficie pública para proyectos, experimentos y realizaciones de VSlices. Cada experiencia conserva su repositorio, evidencia y trayectoria.</p>
+    </section>
     <a class="tile" href="./playground/enactment/">
       <div class="eyebrow">PLAYGROUND 01</div>
       <h2>Enactment</h2>
-      <p>Experimenta con decisiones, transiciones y publicaciones condicionadas por evidencia. Abre el laboratorio →</p>
+      <p>Experimenta con decisiones, transiciones y publicaciones condicionadas por evidencia. <span class="arrow">Abre el laboratorio →</span></p>
     </a>
-    <footer>VSlices · Publicación estática. Fuentes y implementaciones evolucionan de forma independiente.</footer>
+    <footer>VSlices · Publicación estática. Fuentes y realizaciones evolucionan de forma independiente.</footer>
   </main>
 </body>
 </html>
