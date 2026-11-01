@@ -39,6 +39,10 @@ jobs:
           test -s public/index.html
           test -s public/playground/enactment/index.html
           test -s public/playground/enactment/assets/main.js
+          test -s public/playground/enactment/assets/model.js
+          test -s public/playground/enactment/assets/document.js
+          test -s public/playground/enactment/assets/share.js
+          test -s public/playground/enactment/vslices.svg
           test -s public/playground/enactment/styles.css
           ! test -f public/playground/enactment/CNAME
       - name: Upload preview artifact
