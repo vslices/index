@@ -12,7 +12,7 @@ This repository owns the **public static publication surface** for VSlices, targ
 
 [Enactment Playground](https://github.com/vslices/enactment-playground) remains a standalone repository. Index checks out a **specific source revision**, builds and tests it, and copies its `site/` output into `public/playground/enactment/`. Updates to the upstream repository do not automatically replace the published version: revise the pin in a reviewed PR.
 
-**Current source pin:** `ee404cbaef4631eb2a2b8ac8e07469a73f270370`, merged from [Enactment PR #10](https://github.com/vslices/enactment-playground/pull/10). Restores compact sidebar metric cards and fingerprints the CSS asset in both current and legacy HTML to avoid stale browser styles.
+**Current source pin:** `3fb824ca3ed835882492c540129312df33a503c9`, merged from [Enactment PR #11](https://github.com/vslices/enactment-playground/pull/11). Removes the four redundant sidebar metrics, preserving the scenario controls and replay controls in their existing locations.
 
 ## Publication
 
